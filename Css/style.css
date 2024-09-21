@@ -1,16 +1,17 @@
 body {
     margin: 0;
     font-family: 'Inclusive Sans', sans-serif;
-    background-image: url('../img/girasolfont.jpg'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Para que la imagen cubra toda la pantalla */
-    background-position: center; /* Centrar la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('img/girasolfont.jpg'); /* Fondo de girasoles */
+    background-size: cover; /* Cubre toda la pantalla */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1 {
     text-align: center;
-    font-size: 100px;
+    font-size: 6rem; /* Utilizando rem para escalabilidad */
     color: #FFD700; /* Amarillo girasol */
+    margin: 20px;
 }
 
 .Con-2 {
@@ -19,6 +20,8 @@ h1 {
 
 canvas {
     display: block;
+    max-width: 100%; /* Ajusta el canvas al ancho de la pantalla en móviles */
+    height: auto; /* Mantiene la proporción del canvas */
 }
 
 .Contenedor {
@@ -34,6 +37,7 @@ canvas {
     place-content: center;
     align-items: center;
     margin-top: 15px;
+    flex-direction: column; /* Los botones en columna en pantallas pequeñas */
 }
 
 .Texto {
@@ -41,8 +45,9 @@ canvas {
 }
 
 .Texto h2 {
-    font-size: 50px;
-    color:#f4f4f2; /* Amarillo girasol */
+    font-size: 3rem; /* Utilizando rem para escalabilidad */
+    color: #FFD700; /* Amarillo girasol */
+    text-align: center;
 }
 
 #B12 {
@@ -51,14 +56,15 @@ canvas {
 
 .Button {
     font-family: monospace;
-    font-size: x-large;
-    transition-duration: 0.2s;
+    font-size: 1.5rem; /* Tamaño en rem */
+    transition: all 0.2s ease; /* Agregar transición suave */
     padding: 10px;
     border-radius: 8px;
     background-color: #9ACD32; /* Verde hojas */
     color: black;
     border: 2px solid #FFD700; /* Amarillo girasol */
     cursor: pointer;
+    margin: 10px 0;
 }
 
 .Button:hover {
@@ -99,6 +105,7 @@ canvas {
     animation: aparecer 0.5s ease-out;
 }
 
+/* Animación para la ventana emergente */
 @keyframes aparecer {
     0% {
         opacity: 0;
@@ -114,15 +121,49 @@ canvas {
     }
 }
 
-@media (max-width: 468px) {
-    body {
-        background: linear-gradient(100deg, blue, purple, pink);
-    }
+/* Media queries para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
     h1 {
-        font-size: 50px;
+        font-size: 4rem; /* Título más pequeño en móviles */
+        margin: 10px;
     }
+
     .Button {
-        font-size: large;
-        padding-left: 20px;
+        font-size: 1.2rem; /* Tamaño de botón más pequeño */
+        padding: 8px;
+        width: 90%; /* Los botones ocupan el 90% del ancho de la pantalla */
+        margin: 5px auto;
+    }
+
+    .Contenedor {
+        flex-direction: column; /* Los elementos se colocan en columna en móviles */
+        height: auto; /* Ajusta la altura para móviles */
+        padding: 10px;
+    }
+
+    .Texto h2 {
+        font-size: 2rem; /* Texto más pequeño en móviles */
+    }
+
+    canvas {
+        width: 100%;
+        height: auto; /* Mantiene proporciones del canvas */
+    }
+
+    .Con {
+        flex-direction: column; /* Botones en columna para móviles */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 468px) {
+    h1 {
+        font-size: 3rem; /* Título más pequeño en móviles muy pequeños */
+    }
+
+    .Button {
+        font-size: 1rem;
+        padding: 6px;
+        width: 95%; /* Botones casi a ancho completo en pantallas muy pequeñas */
     }
 }
