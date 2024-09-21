@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Inclusive Sans', sans-serif;
-    background-image: url('img/girasolfont.jpg'); /* Fondo de girasoles */
+    background-image: url('../img/girasolfont.jpg'); /* Fondo de girasoles */
     background-size: cover; /* Cubre toda la pantalla */
     background-position: center;
     background-repeat: no-repeat;
